@@ -8,8 +8,8 @@ The repository contains specifications for the systems in the gcrNet project inc
 * Application Server
 
 DTN Server - reference architecture https://fasterdata.es.net/science-dmz/DTN/reference-implementation/
-	SuperMicro SuperStorage 6049P-E1CR24H Server - 24 3.5 inch drive bays
 
+	SuperMicro SuperStorage 6049P-E1CR24H Server - 24 3.5 inch drive bays
 	2 Intel Gold 6254 CPUs
 	128gb of memory
 	Intel VROC HW Key
