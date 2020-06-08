@@ -1,34 +1,29 @@
 # gcrNet Server Infrastructure Requirements
 
-This document contains the server roles for the gcrNet and their technical requirements. The available budget for the described infrastructure is $49,139. The allocation by role is included below, but can be redistributed as needed with PI approval.
+This document contains the server roles for the gcrNet infrastructure and requirements. The available budget for the described infrastructure is $49,139.
 
 ## Servers Roles
 
 1 x Data Transfer Node ($13,500; Actual: $13,559.19)
 1 x General Login Server ($6,500; Actual: $8,456.00)
-1 x Network Administration Server (no original budget; Actual: $6,647/33)
+1 x Network Administration Server (no original budget; Actual: $6,647.33)
 1 x IDS Server ($5,750; Actual: TBD)
 3 x PerfSonar Servers ($23,389)
 - perfSonar Core (Actual: $4,830.62)
 - perfSonar JSNN (Actual: $3,487.68)
 - perfSonar NC A&T (Actual: TBD)
 
-## Data Transfer Node: Dell R740xd
+## Data Transfer Node
 
-- Processor: 2 x Intel Xeon Gold 5222
-- RAM: 128GB (16 x 8GB)
-- NIC: 1 x Mellanox ConnectX-4
-- RAID Controller: PERC H740P
-- Disk:
-  - 2 x 1.2TB SAS 10k 12Gbps (RAID 1) - OS (1.2TB)
-  - 5 x 8TB NLSAS 12Gbps (RAID 5) - DTN Storage (32TB)
-  - 4 x 1.92TB SAS SSD 12Gbps (RAID 5) - Fast DTN (5.76TB)
+The data transfer node provides the high speed data ingress and egress method for the gcrNet using Globus. Attention is paid to maximize throughput for single threaded processes and high-speed networking. The DTN minimum requirements are:
 
-The DTN is used to transfer data in and out of the gcrNet. The minimum requirements are:
-
-- Support 10Gbps data transfer
+- 3.5Ghz CPU
+- 96GB memory
+- Support 10Gbps external data transfer
+- Support 40Gbps internal data transfer
+- 8GB RAID controller cache
 - Contain a sperate management port
-- Provide at least 30TB of usable storage
+- Provide at least 30TB of usable storage, idally using tiered storage
 - Linux-based OS
 - Support IPv6
 
