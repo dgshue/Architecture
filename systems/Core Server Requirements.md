@@ -4,11 +4,14 @@ This document contains the server roles for the gcrNet and their technical requi
 
 ## Servers Roles
 
-1 x Data Transfer Node ($13,500)
-1 x General Login Server ($6,500)
-1 x Network Administration Server (no original budget)
-1 x IDS Server ($5,750)
+1 x Data Transfer Node ($13,500; Actual: $13,559.19)
+1 x General Login Server ($6,500; Actual: $8,456.00)
+1 x Network Administration Server (no original budget; Actual: $6,647/33)
+1 x IDS Server ($5,750; Actual: TBD)
 3 x PerfSonar Servers ($23,389)
+- perfSonar Core (Actual: $4,830.62)
+- perfSonar JSNN (Actual: $3,487.68)
+- perfSonar NC A&T (Actual: TBD)
 
 ## Data Transfer Node: Dell R740xd
 
