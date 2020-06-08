@@ -6,5 +6,6 @@ The repository contains specifications for the systems in the gcrNet project inc
 * perfSonar Nodes
 * General Login
 * Application Server
-
+* Network Application Server
+* Intrusion Detection System
 
