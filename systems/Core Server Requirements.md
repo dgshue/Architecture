@@ -56,6 +56,11 @@ The General Login Server is the hub of connecting to the gcrNet. Most often this
 
 This server provides the necessary tools for network functionality, including DNS, DHCP, LDAP, and other infrastrcuture services for the gcrNet. The minimum requirements are:
 
+- Dual 16 core CPUs
+- 128GB+ RAM
+- 2.5TB+ storage
+- 10G network connectivity
+
 ## Intrustion Detection System Server
 
 The IDS provide network security analysis of the external internet link through a mirrored port. Data from the IDS will be used to identify and even act upon network traffic that is identified as a possible threat. The minimum requirements are:
