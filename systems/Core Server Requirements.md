@@ -41,14 +41,16 @@ Additional considerations include:
 - VROC is most likely out of scope
 - CPU speed is important - Xeon Gold series is ideal
 
-## General Login Server: Dell R540
+## General Login Server
 
-- Processor: 2 x Intel Xeon Gold 5218
-- RAM: 192GB (6 x 32GB)
-- Disk: 
-  - 2 x 1.2TB hard drives (raid 1 configuration) - OS
-  - ? - Local storage
-- NIC: 1 x Mellanox ConnectX-4
+The General Login Server is the hub of connecting to the gcrNet. Most often this server will be the first stop for researchers that are accessing systems in the network. Therefore, it should provide the necessary tools to performa basic computation as well as enough storage and resources for non-specialized daily usage. The minimum requirements are:
+
+- Dual 16 core CPUs
+- 128GB memory
+- Dedicated management port
+- 40G+ network connectivity
+- OS and Data drive
+- 5TB+ data drive
 
 ## Application Server: Dell R540    
 
