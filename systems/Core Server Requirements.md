@@ -52,35 +52,18 @@ The General Login Server is the hub of connecting to the gcrNet. Most often this
 - OS and Data drive
 - 5TB+ data drive
 
-## Application Server: Dell R540    
+## Network Administration Server 
 
-- Processor: 2 x Intel Xeon ?
-- RAM: 128GB (4 x 32GB)
-- Disk: 
-  - 2 x 1.2TB hard drives (raid 1 configuration) - OS
-  - ? - Local storage
-- NIC: 1 x Mellanox ConnectX-4
+This server provides the necessary tools for network functionality, including DNS, DHCP, LDAP, and other infrastrcuture services for the gcrNet. The minimum requirements are:
 
-## IDS Server: TBD
+## Intrustion Detection System Server
+
+The IDS provide network security analysis of the external internet link through a mirrored port. Data from the IDS will be used to identify and even act upon network traffic that is identified as a possible threat. The minimum requirements are:
 
 ## PerfSonar Servers
 
-The perfSonar design includes:
+The gcrNet consists of 3 perfSonar servers. The core node that provides  measurement for the gcrNet, reporting, and web interface. The two measurement nodes measure performance at the JSNN and NC A&T.
 
-- 1 x JSNN measurement node
-- 1 x NC A&T measurement node
-- 1 x core measurement node + collection
+### Measurement Nodes:
 
-### Measurement Nodes: 2 x Dell R440 1U Server
-
-- Processor: 1 x Intel Xeon Gold 5222
-- RAM: 32GB (4 x 8GB)
-- Disk: 2 x 1.2TB hard drives (raid 1 configuration)
-- NIC: 1 x Mellanox ConnectX-4
-
-### Core Node: Dell R440 1U Server
-
-- Processor: 1 x Intel Xeon Gold 5222
-- RAM: 128GB (4 x 32GB)
-- Disk: 2 x 1.2TB hard drives (raid 1 configuration)
-- NIC: 1 x Mellanox ConnectX-4
+### Core Node
