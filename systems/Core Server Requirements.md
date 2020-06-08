@@ -67,8 +67,12 @@ The IDS provide network security analysis of the external internet link through 
 
 ## PerfSonar Servers
 
-The gcrNet consists of 3 perfSonar servers. The core node that provides  measurement for the gcrNet, reporting, and web interface. The two measurement nodes measure performance at the JSNN and NC A&T.
+The gcrNet consists of 3 perfSonar servers. The core node that provides  measurement for the gcrNet, reporting, and web interface. The two measurement nodes measure performance at the JSNN and NC A&T. The minimum requirements are:
 
-### Measurement Nodes:
-
-### Core Node
+- 3.5Ghz + CPU
+- Network connectivity (JSNN): 10G SFP+
+- Network connectivity (Core & NC A&T): 40/100G QSFP28
+- 1TB+ storage
+- Hardware RAID controller with 2GB+ cache
+- 96GB+ RAM (core)
+- 16GB+ RAM (JSNN & NC A&T)

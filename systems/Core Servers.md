@@ -39,7 +39,35 @@ NIC:
 
 ## perfSonar - Core
 
+Dell PowerEdge R440
+
+CPU: Intel Xeon Gold 5222 3.8Ghz 4 core
+
+Memory: 4 x 32GB 2666MT/s Dual Rank RDIMM (128GB)
+
+RAID Controller: Dell PERC H740P, 8GB Cache Low Profile
+
+Disk: 2 x 1.2TB 10K SAS 12Gbps (RAID 1)
+
+NIC: Mellanox TBD QSFP28 Low Profile
+
 ## perfSonar - JSNN
+
+Dell PowerEdge R440
+
+CPU: Intel Xeon Gold 5222 3.8Ghz 4 core
+
+Memory: 2 x 8GB 2666MT/s Single Rank RDIMM (128GB)
+
+RAID Controller: Dell PERC H740P, 8GB Cache Low Profile
+
+Disk: 2 x 1.2TB 10K SAS 12Gbps (RAID 1)
+
+NIC: Mellanox TBD SFP+ Low Profile
+
+## perfSonar - NC A&T
+
+TBD
 
 ## General Login Server
 
