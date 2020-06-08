@@ -62,3 +62,19 @@ NIC:
 - Data: Mellanox TBD Low Profile
 
 ## Network Admin Server
+
+Dell PowerEdge R540 
+
+CPU: 2 x Intel Xeon Gold 5218 2.3Ghz 16 core
+
+Memory: 4 x 32GB 2666MT/s Dual Rank RDIMM (128GB)
+
+RAID Controller: Dell PERC H740P, 8GB Cache Low Profile
+
+Disk:
+
+- OS: 4 x 1.2TB 10K SAS 12Gbps (RAID 5)
+
+NIC: 
+
+- Management and Data: Broadcom 57412 Dual Port 10G SFP+ Low Profile
