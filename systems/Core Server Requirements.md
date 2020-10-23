@@ -1,31 +1,29 @@
 # gcrNet Server Infrastructure Requirements
 
-This document contains the server roles for the gcrNet and their technical requirements. The available budget for the described infrastructure is $49,139. The allocation by role is included below, but can be redistributed as needed with PI approval.
+This document contains the server roles for the gcrNet infrastructure and requirements. The available budget for the described infrastructure is $49,139.
 
 ## Servers Roles
 
-1 x Data Transfer Node ($13,500)
-1 x General Login Server ($6,500)
-1 x Network Administration Server (no original budget)
-1 x IDS Server ($5,750)
+1 x Data Transfer Node ($13,500; Actual: $13,559.19)
+1 x General Login Server ($6,500; Actual: $8,456.00)
+1 x Network Administration Server (no original budget; Actual: $6,647.33)
+1 x IDS Server ($5,750; Actual: TBD)
 3 x PerfSonar Servers ($23,389)
+- perfSonar Core (Actual: $4,830.62)
+- perfSonar JSNN (Actual: $3,487.68)
+- perfSonar NC A&T (Actual: TBD)
 
-## Data Transfer Node: Dell R740xd
+## Data Transfer Node
 
-- Processor: 2 x Intel Xeon Gold 5222
-- RAM: 128GB (16 x 8GB)
-- NIC: 1 x Mellanox ConnectX-4
-- RAID Controller: PERC H740P
-- Disk:
-  - 2 x 1.2TB SAS 10k 12Gbps (RAID 1) - OS (1.2TB)
-  - 5 x 8TB NLSAS 12Gbps (RAID 5) - DTN Storage (32TB)
-  - 4 x 1.92TB SAS SSD 12Gbps (RAID 5) - Fast DTN (5.76TB)
+The data transfer node provides the high speed data ingress and egress method for the gcrNet using Globus. Attention is paid to maximize throughput for single threaded processes and high-speed networking. The DTN minimum requirements are:
 
-The DTN is used to transfer data in and out of the gcrNet. The minimum requirements are:
-
-- Support 10Gbps data transfer
+- 3.5Ghz CPU
+- 96GB memory
+- Support 10Gbps external data transfer
+- Support 40Gbps internal data transfer
+- 8GB RAID controller cache
 - Contain a sperate management port
-- Provide at least 30TB of usable storage
+- Provide at least 30TB of usable storage, idally using tiered storage
 - Linux-based OS
 - Support IPv6
 
@@ -43,44 +41,38 @@ Additional considerations include:
 - VROC is most likely out of scope
 - CPU speed is important - Xeon Gold series is ideal
 
-## General Login Server: Dell R540
+## General Login Server
 
-- Processor: 2 x Intel Xeon Gold 5218
-- RAM: 192GB (6 x 32GB)
-- Disk: 
-  - 2 x 1.2TB hard drives (raid 1 configuration) - OS
-  - ? - Local storage
-- NIC: 1 x Mellanox ConnectX-4
+The General Login Server is the hub of connecting to the gcrNet. Most often this server will be the first stop for researchers that are accessing systems in the network. Therefore, it should provide the necessary tools to performa basic computation as well as enough storage and resources for non-specialized daily usage. The minimum requirements are:
 
-## Application Server: Dell R540    
+- Dual 16 core CPUs
+- 128GB memory
+- Dedicated management port
+- 40G+ network connectivity
+- OS and Data drive
+- 5TB+ data drive
 
-- Processor: 2 x Intel Xeon ?
-- RAM: 128GB (4 x 32GB)
-- Disk: 
-  - 2 x 1.2TB hard drives (raid 1 configuration) - OS
-  - ? - Local storage
-- NIC: 1 x Mellanox ConnectX-4
+## Network Administration Server 
 
-## IDS Server: TBD
+This server provides the necessary tools for network functionality, including DNS, DHCP, LDAP, and other infrastrcuture services for the gcrNet. The minimum requirements are:
+
+- Dual 16 core CPUs
+- 128GB+ RAM
+- 2.5TB+ storage
+- 10G network connectivity
+
+## Intrustion Detection System Server
+
+The IDS provide network security analysis of the external internet link through a mirrored port. Data from the IDS will be used to identify and even act upon network traffic that is identified as a possible threat. The minimum requirements are:
 
 ## PerfSonar Servers
 
-The perfSonar design includes:
+The gcrNet consists of 3 perfSonar servers. The core node that provides  measurement for the gcrNet, reporting, and web interface. The two measurement nodes measure performance at the JSNN and NC A&T. The minimum requirements are:
 
-- 1 x JSNN measurement node
-- 1 x NC A&T measurement node
-- 1 x core measurement node + collection
-
-### Measurement Nodes: 2 x Dell R440 1U Server
-
-- Processor: 1 x Intel Xeon Gold 5222
-- RAM: 32GB (4 x 8GB)
-- Disk: 2 x 1.2TB hard drives (raid 1 configuration)
-- NIC: 1 x Mellanox ConnectX-4
-
-### Core Node: Dell R440 1U Server
-
-- Processor: 1 x Intel Xeon Gold 5222
-- RAM: 128GB (4 x 32GB)
-- Disk: 2 x 1.2TB hard drives (raid 1 configuration)
-- NIC: 1 x Mellanox ConnectX-4
+- 3.5Ghz + CPU
+- Network connectivity (JSNN): 10G SFP+
+- Network connectivity (Core & NC A&T): 40/100G QSFP28
+- 1TB+ storage
+- Hardware RAID controller with 2GB+ cache
+- 96GB+ RAM (core)
+- 16GB+ RAM (JSNN & NC A&T)
