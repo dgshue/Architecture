@@ -35,7 +35,7 @@ Disk:
 NIC: 
 
 - Management: Broadcom 57416 10G
-- Data: Mellanox TBD
+- Data: Mellanox MT27800 Family [ConnectX-5]
 
 ## perfSonar - Core
 
@@ -49,7 +49,7 @@ RAID Controller: Dell PERC H740P, 8GB Cache Low Profile
 
 Disk: 2 x 1.2TB 10K SAS 12Gbps (RAID 1)
 
-NIC: Mellanox TBD QSFP28 Low Profile
+NIC: Mellanox Technologies MT27800 Family [ConnectX-5]
 
 ## perfSonar - JSNN
 
@@ -87,7 +87,7 @@ Disk:
 NIC: 
 
 - Management: 
-- Data: Mellanox TBD Low Profile
+- Data: Mellanox Technologies MT27800 Family [ConnectX-5]
 
 ## Network Admin Server
 
@@ -105,4 +105,5 @@ Disk:
 
 NIC: 
 
-- Management and Data: Broadcom 57412 Dual Port 10G SFP+ Low Profile
+- Management: NetXtreme BCM5720 2-port Gigabit Ethernet
+- Data: BCM57412 NetXtreme-E 10Gb RDMA Ethernet
