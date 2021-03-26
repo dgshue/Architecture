@@ -1,0 +1,32 @@
+#!/bin/bash -e
+docker run \
+	--name ldap-service \
+	--hostname ldap.gcrnet.org \
+	--env LDAP_ORGANISATION="gcrNet" \
+	--env LDAP_DOMAIN="gcrnet.org" \
+	--publish 389:389 \
+	--publish 636:636 \
+	--mount source=ldap,destination=/var/lib/ldap \
+	--mount source=ldap-config,destination=/etc/ldap/slapd.d \
+	--detach osixia/openldap:1.1.8
+
+docker run \
+	--name phpldapadmin-service \
+	--hostname phpldapadmin-service \
+	--link ldap-service:ldap-host \
+	--mount source=certs,destination=/container/service/phpldapadmin/assets/apache2/certs \
+	--env HTTP_PROXY=http://proxy.uncg.edu:3128 \
+	--env HTTPS_PROXY=http://proxy.uncg.edu:3128 \
+	--env PHPLDAPADMIN_LDAP_HOSTS=ldap.gcrnet.org \
+	--env PHPLDAPADMIN_HTTPS_CRT_FILENAME=ldap_gcrnet_org.crt \
+	--env PHPLDAPADMIN_HTTPS_KEY_FILENAME=ldap_gcrnet_org.key \
+	--env PHPLDAPADMIN_HTTPS_CA_CRT_FILENAME=ldap_gcrnet_org_ca.crt \
+	--env PHPLDAPADMIN_LDAP_HOSTS=ldap.gcrnet.org \
+	--publish 8443:443 \
+	--detach gcrnet/phpldapadmin:0.1.0
+
+PHPLDAP_IP=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}" phpldapadmin-service)
+
+echo "Go to: https://$PHPLDAP_IP"
+echo "Login DN: cn=admin,dc=gcrnet,dc=org"
+echo "Password: admin"
